@@ -27,5 +27,5 @@ python3 train.py --img 415 --batch 16 --epochs 30 --data /home/prince/Desktop/yo
 ```
 #### Detection
 ```
-python detect.py --source runs/train/exp/a.jpg --weights best.pt
+python3 detect.py --source runs/train/exp/a.jpg --weights best.pt
 ```
