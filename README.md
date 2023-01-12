@@ -6,7 +6,7 @@ I have implemented yolov5 on custom dataset
 ``` !git clone https://github.com/ultralytics/yolov5 ```
 #### In the same directory run the command to install the requirements
 ``` pip install -r requirements.txt```
-#### Arrange the dataset in
+#### Arrange the dataset in given order
 ##### dataset
 * images <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; train <br>
