@@ -16,44 +16,46 @@
 # Installation
  ### Clone the repository:
  
- ```  git clone https://github.com/<username>/object-detection-using-yolov5-on-custom-dataset.git ```
+ 
+    !git clone https://github.com/ultralytics/yolov5
  
  ### Install the required packages:
  
- ``` pip install -r requirements.txt ```
+    pip install -r requirements.txt 
+    
  
  ### Download the YOLOv5 weights from the official [website](https://github.com/ultralytics/yolov5) and place them in the weights directory.
  
+# Dataset
+
+The dataset should be in the format of PASCAL VOC and should be placed in the data directory. The dataset should have following structure:
+
+data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  train..<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    images.. <imagename>.jpg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  annotations.. <imagename>.xml<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  val <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    images.. <imagename>.jpg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   annotations.. <imagename>.xml<br>
+
+# Training
+To train the model, run the following command: 
 
 
------------------------------------------------------------------------------------------------------------------
+     python train.py --data <path to data file> --cfg <path to config file> --weights <path to weights file> --batch-size <batch size> --epochs <number of epochs>
 
+> * Note: You can also use the --img-size flag to set the input image size and the --img-weights flag to specify the weight file of the model.
 
-# Installation
-#### Firstly clone the yolov5 
-``` !git clone https://github.com/ultralytics/yolov5 ```
-#### In the same directory run the command to install the requirements
-``` pip install -r requirements.txt```
-#### Arrange the dataset in given order
-##### dataset
-* images <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; train <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; val
-* labels <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; train <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; val
+# Model Inference
 
-##### Divide the dataset in train and val folder. 
-```
-python3 arrange.py
+##### After the training is complete, you will have a trained model in the weights folder.
+ Use the command to test the model on a single image or video.
+   
+    python detect.py --weights <path to weight file> --source <path to image/video file> --conf-thres <confidence threshold> --iou-thres <IoU threshold>
+    
+ 
+ # Conclusion
 
-```
-#### Start training
-```
-python3 train.py --img 415 --batch 16 --epochs 30 --data /home/prince/Desktop/yolo/dataset.yaml --weights yolov5s.pt --cache
-
-```
-#### Detection
-```
-python3 detect.py --source runs/train/exp/a.jpg --weights best.pt
-```
+This guide has provided an overview of how to train a YOLOv5 model on a custom dataset for object detection. With a trained model, you can now use the model to perform object detection on new images and videos. Keep in mind that the accuracy of the model will depend on the quality of the dataset and the amount of training data used.
+    
+    
