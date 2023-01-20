@@ -1,5 +1,33 @@
-# object-detection-using-yolov5-on-custom-dataset
-I have implemented yolov5 on custom dataset
+# Object Detection using YOLOv5 on Custom Dataset.
+
+# Introduction
+
+#### This repository contains code for training and using YOLOv5, a state-of-the-art object detection model, on a custom dataset. YOLOv5 is a real-time object detection model that can detect multiple objects in an image or video.
+
+# Prerequisites
+
+ * Python 3.7 or later
+ * PyTorch 1.7 or later
+ * CUDA and cuDNN (if using a GPU for training)
+ * OpenCV
+ * Matplotlib
+ * Numpy
+ 
+# Installation
+ ### Clone the repository:
+ 
+ ```  git clone https://github.com/<username>/object-detection-using-yolov5-on-custom-dataset.git ```
+ 
+ ### Install the required packages:
+ 
+ ``` pip install -r requirements.txt ```
+ 
+ ### Download the YOLOv5 weights from the official [website](https://github.com/ultralytics/yolov5) and place them in the weights directory.
+ 
+
+
+-----------------------------------------------------------------------------------------------------------------
+
 
 # Installation
 #### Firstly clone the yolov5 
